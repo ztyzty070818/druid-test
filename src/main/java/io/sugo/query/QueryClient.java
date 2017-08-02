@@ -3,6 +3,7 @@ package io.sugo.query;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.sugo.Aggregation.CountAggregation;
+import io.sugo.Aggregation.DoubleMaxAggregation;
 import io.sugo.Aggregation.HyperUniqueAggregation;
 import io.sugo.DataUtil.JsonFormater;
 import io.sugo.query.member.Context;
@@ -21,6 +22,7 @@ public class QueryClient {
 		query.setContext(new Context(1800,true,"v2"));
 		query.addAggregation(new HyperUniqueAggregation("ageCount","age"));
 		query.addAggregation(new CountAggregation("__Value"));
+		query.addAggregation(new DoubleMaxAggregation("MAX_AGE","age"));
 		println(JsonFormater.format(jsonMapper.writeValueAsString(query)));
 		println(JsonFormater.format(query.query("http://192.168.0.225:8082/druid/v2")));
 
