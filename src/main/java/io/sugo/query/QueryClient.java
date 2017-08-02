@@ -21,6 +21,7 @@ public class QueryClient {
 		query.setIntervals("1000/3000");
 		query.setContext(new Context(1800,true,"v2"));
 		query.addAggregation(new HyperUniqueAggregation("ageCount","age"));
+		
 		query.addAggregation(new CountAggregation("__Value"));
 		query.addAggregation(new DoubleMaxAggregation("MAX_AGE","age"));
 		println(JsonFormater.format(jsonMapper.writeValueAsString(query) ));
