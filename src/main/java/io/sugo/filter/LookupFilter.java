@@ -1,4 +1,6 @@
-package io.sugo.components.filter;
+package io.sugo.filter;
+
+import java.util.List;
 
 /**
  * Created by qwe on 17-7-28.
