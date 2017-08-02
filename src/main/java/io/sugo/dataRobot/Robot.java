@@ -44,7 +44,7 @@ public class Robot {
 
                 sum++;
 
-                if( (sum) % 100000 == 0) {
+                if( (sum) % 10000 == 0) {
                     System.out.println("send count:"+ sum);
                 }
 
