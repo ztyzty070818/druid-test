@@ -1,12 +1,12 @@
-package io.sugo.aggregation;
+package io.sugo.components.aggregation;
 
 /**
  * Created by chenyuzhi on 17-8-2.
  */
-public class LongMaxAggregation extends Aggregation {
-	private static final String AGGREGATION_TYPE = "lucene_longMax";
+public class LongMinAggregation extends Aggregation {
+	private static final String AGGREGATION_TYPE = "lucene_longMin";
 	private String fieldName;
-	public LongMaxAggregation(String name, String fieldName){
+	public LongMinAggregation(String name, String fieldName){
 		super(AGGREGATION_TYPE,name);
 		this.fieldName = fieldName;
 	}

@@ -1,4 +1,4 @@
-package io.sugo.aggregation;
+package io.sugo.components.aggregation;
 
 /**
  * Created by chenyuzhi on 17-7-28.

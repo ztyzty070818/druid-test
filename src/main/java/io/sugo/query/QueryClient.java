@@ -3,9 +3,9 @@ package io.sugo.query;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.sugo.aggregation.*;
+import io.sugo.components.aggregation.*;
 import io.sugo.dataUtil.JsonFormater;
 import io.sugo.query.member.Context;
-import sun.management.Agent;
 
 /**
  * Created by chenyuzhi on 17-7-28.

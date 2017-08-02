@@ -10,7 +10,7 @@ import java.util.Properties;
  */
 public class Robot {
     public static void main(String[] args) throws IOException {
-
+        int sum = 0;
         Properties props = new Properties();
         props.load(new FileInputStream("data.properties"));
 
@@ -31,7 +31,6 @@ public class Robot {
 
 
         FileWriter fileWriter = new FileWriter(file);
-        BufferedWriter bufferWriter = new BufferedWriter(fileWriter);
 
         DateTime start = new DateTime(2017,5,1,0,0);
         DateTime current;
@@ -40,17 +39,20 @@ public class Robot {
             current = start.plusDays(j);
             for(int i=0;i<numPerDay;i++) {
 
-                String sendStr = creator.generateData( j*numPerDay+i , current);
-//                bufferWriter.write(sendStr+"\r\n");
+                String sendStr = creator.generateData( sum , current);
+                fileWriter.write(sendStr+"\r\n");
 
-                if( (j*numPerDay+i) % 100000 == 0) {
-                    System.out.println("send count:"+ (j*numPerDay+i));
+                sum++;
+
+                if( (sum) % 100000 == 0) {
+                    System.out.println("send count:"+ sum);
                 }
-                System.out.println(sendStr);
 
             }
         }
-        bufferWriter.close(); // 关闭数据流
+
+        System.out.println("send total:" + sum);
+
         fileWriter.close();
     }
 
