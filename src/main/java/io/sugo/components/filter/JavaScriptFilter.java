@@ -1,4 +1,4 @@
-package io.sugo.filter;
+package io.sugo.components.filter;
 
 /**
  * Created by qwe on 17-7-28.

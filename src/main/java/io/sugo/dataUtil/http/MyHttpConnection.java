@@ -1,4 +1,4 @@
-package io.sugo.DataUtil.http;
+package io.sugo.dataUtil.http;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -3,9 +3,9 @@ package io.sugo.query;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.sugo.DataUtil.http.MyHttpConnection;
+import io.sugo.dataUtil.http.MyHttpConnection;
 import io.sugo.query.member.Context;
-import io.sugo.Aggregation.CountAggregation;
+import io.sugo.components.aggregation.CountAggregation;
 
 import java.util.LinkedList;
 import java.util.List;

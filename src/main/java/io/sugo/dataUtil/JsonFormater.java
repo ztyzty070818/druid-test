@@ -1,4 +1,4 @@
-package io.sugo.DataUtil;
+package io.sugo.dataUtil;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

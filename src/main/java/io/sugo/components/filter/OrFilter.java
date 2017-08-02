@@ -1,4 +1,4 @@
-package io.sugo.filter;
+package io.sugo.components.filter;
 
 import java.util.List;
 
