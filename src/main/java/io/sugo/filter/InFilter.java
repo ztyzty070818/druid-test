@@ -7,12 +7,12 @@ import java.util.List;
  */
 public class InFilter implements Filter {
     private final String type = "in";
-    private String dimension = "province";
-    private String[] values = "广东省,广西省".split(",");
+    private String dimension;
+    private String[] values;
 
     public InFilter() {
         this.dimension = "province";
-//        this.value
+        this.values = "广东省,广西省".split(",");
     }
 
     public InFilter(String dimension,String[] values){
