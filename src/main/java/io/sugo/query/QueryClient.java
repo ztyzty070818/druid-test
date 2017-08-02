@@ -2,8 +2,8 @@ package io.sugo.query;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.sugo.components.Aggregation.CountAggregation;
-import io.sugo.components.Aggregation.HyperUniqueAggregation;
+import io.sugo.components.aggregation.CountAggregation;
+import io.sugo.components.aggregation.HyperUniqueAggregation;
 import io.sugo.dataUtil.JsonFormater;
 import io.sugo.query.member.Context;
 

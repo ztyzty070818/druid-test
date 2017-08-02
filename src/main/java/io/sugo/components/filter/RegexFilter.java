@@ -4,7 +4,7 @@ package io.sugo.components.filter;
  * Created by qwe on 17-7-28.
  */
 public class RegexFilter implements Filter {
-    private String type = "regex";
+    private final String type = "regex";
     private String dimension = "id";
     private String pattern = "^c2.*";
 
