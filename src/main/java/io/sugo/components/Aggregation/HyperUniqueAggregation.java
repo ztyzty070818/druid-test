@@ -1,4 +1,4 @@
-package io.sugo.Aggregation;
+package io.sugo.components.Aggregation;
 
 /**
  * Created by chenyuzhi on 17-7-28.

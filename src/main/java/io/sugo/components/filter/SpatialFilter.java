@@ -1,6 +1,4 @@
-package io.sugo.filter;
-
-import java.util.Random;
+package io.sugo.components.filter;
 
 /**
  * Created by qwe on 17-7-28.
