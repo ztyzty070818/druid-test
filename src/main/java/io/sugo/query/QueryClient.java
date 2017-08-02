@@ -23,7 +23,7 @@ public class QueryClient {
 		query.addAggregation(new HyperUniqueAggregation("ageCount","age"));
 		query.addAggregation(new CountAggregation("__Value"));
 		query.addAggregation(new DoubleMaxAggregation("MAX_AGE","age"));
-		println(JsonFormater.format(jsonMapper.writeValueAsString(query)));
+		println(JsonFormater.format(jsonMapper.writeValueAsString(query) ));
 		println(JsonFormater.format(query.query("http://192.168.0.225:8082/druid/v2")));
 
 	}
