@@ -1,0 +1,54 @@
+{
+  "type": "lucene_index",
+  "worker": "dev224.sugo.net:8091",
+  "spec": {
+    "dataSchema": {
+      "dataSource": "druid-test",
+      "metricsSpec": [],
+      "parser": {
+        "parseSpec": {
+          "format": "csv",
+          "timestampSpec": {"column": "dt","format": "millis"},
+          "dimensionsSpec": {
+            "dimensionExclusions": [],
+            "spatialDimensions": [],
+            "dimensions": [
+              {"name": "id","type": "string"},
+              {"name": "sex","type": "string"},
+              {"name": "age","type": "int"},
+              {"name": "province","type": "string"},
+              {"name": "salary","type": "float"},
+              {"name": "size","type": "double"},
+              {"name": "longNum","type": "long"}
+            ]
+          },
+          "listDelimiter": ",",
+          "columns": ["id","sex","age","province","dt","salary","size","longNum"]
+        }
+      },
+      "granularitySpec": {
+        "intervals": ["2017-05-01/2017-06-10"],
+        "segmentGranularity": "DAY",
+        "queryGranularity": "NONE",
+        "type": "uniform"
+      }
+    },
+    "ioConfig": {
+      "type":"lucene_index",
+      "firehose":{
+        "type": "local",
+        "filter": "data.csv",
+        "baseDir": "/data1/csv/"
+      }
+    },
+    "tuningConfig": {
+      "type": "lucene_index",
+      "maxRowsPerSegment": 5000000,
+      "overwrite": false,
+      "reportParseExceptions":true
+    }
+  },
+  "context":{
+    "debug":true
+  }
+}
