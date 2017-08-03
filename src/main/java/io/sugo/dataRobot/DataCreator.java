@@ -44,7 +44,7 @@ public class DataCreator{
             //身高
             double height = random.nextInt(70) + 130 + random.nextDouble();
             //体重
-            BigDecimal weight = new BigDecimal(random.nextInt(50) + 30 +random.nextDouble());
+            //BigDecimal weight = new BigDecimal(random.nextInt(50) + 30 +random.nextDouble());
 
             List list = new ArrayList();
             list.add(age);
@@ -53,7 +53,7 @@ public class DataCreator{
             list.add(birthday.getMillis());
             list.add(salary);
             list.add(height);
-            list.add(weight);
+            //list.add(weight);
             list.add(average);
 
             return getCsvFromList(list);

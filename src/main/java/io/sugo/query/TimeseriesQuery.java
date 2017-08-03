@@ -3,9 +3,10 @@ package io.sugo.query;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.sugo.components.aggregation.base.BaseAggregation;
 import io.sugo.dataUtil.http.MyHttpConnection;
 import io.sugo.query.member.Context;
-import io.sugo.components.aggregation.CountAggregation;
+import io.sugo.components.aggregation.CountBaseAggregation;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,12 +14,12 @@ import java.util.List;
 /**
  * Created by chenyuzhi on 17-7-28.
  */
-public class TimeseriesQuery implements Query {
+public class TimeseriesQuery <T extends BaseAggregation> implements Query {
 	private  final String queryType = "lucene_timeseries";
 	private  String dataSource;
 	private  String granularity;
 	private  Context context;
-	private  List aggregations = new LinkedList<>();
+	private  List<T> aggregations = new LinkedList();
 	private	 String intervals;
 	static ObjectMapper jsonMapper = new ObjectMapper();
 
@@ -32,11 +33,11 @@ public class TimeseriesQuery implements Query {
 
 
 
-	public TimeseriesQuery(String dataSource, String granularity, Context context, List<CountAggregation> aggregations, String intervals) {
+	public TimeseriesQuery(String dataSource, String granularity, Context context, List<CountBaseAggregation> aggregations, String intervals) {
 		this.dataSource = dataSource;
 		this.granularity = granularity;
 		this.context = context;
-		this.aggregations = aggregations;
+		this.aggregations = (List<T>)aggregations;
 		this.intervals = intervals;
 	}
 
@@ -73,7 +74,7 @@ public class TimeseriesQuery implements Query {
 		this.context = context;
 	}
 
-	public void setAggregations(List<CountAggregation> aggregations) {
+	public void setAggregations(List<T> aggregations) {
 		this.aggregations = aggregations;
 	}
 
@@ -86,11 +87,11 @@ public class TimeseriesQuery implements Query {
 		return context;
 	}
 
-	public <T> List<T> getAggregations() {
+	public  List<T> getAggregations() {
 		return aggregations;
 	}
 
-	public <T> void addAggregation(T t){
+	public  void addAggregation(T t){
 		this.aggregations.add(t);
 	}
 
