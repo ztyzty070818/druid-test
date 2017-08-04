@@ -3,7 +3,7 @@
   "worker": "dev224.sugo.net:8091",
   "spec": {
     "dataSchema": {
-      "dataSource": "druid-test",
+      "dataSource": "csv-test",
       "metricsSpec": [],
       "parser": {
         "parseSpec": {
@@ -13,17 +13,16 @@
             "dimensionExclusions": [],
             "spatialDimensions": [],
             "dimensions": [
-              {"name": "id","type": "string"},
-              {"name": "sex","type": "string"},
               {"name": "age","type": "int"},
               {"name": "province","type": "string"},
-              {"name": "salary","type": "float"},
-              {"name": "size","type": "double"},
-              {"name": "longNum","type": "long"}
+              {"name": "birthday","type": "date","format":"millis"},
+              {"name": "salary","type": "long"},
+              {"name": "height","type": "double"},
+              {"name": "average","type": "float"}
             ]
           },
           "listDelimiter": ",",
-          "columns": ["id","sex","age","province","dt","salary","size","longNum"]
+          "columns": ["age","province","dt","birthday","salary","height","average"]
         }
       },
       "granularitySpec": {
