@@ -1,4 +1,4 @@
-package io.sugo.query;
+package io.sugo.query.base;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
